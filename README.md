@@ -1,5 +1,5 @@
 # 2023-NYCU-ICSDT-G2
-
+Chatall is an innovative web application designed to bring students and learners together, creating a community where individuals can find and make friends with similar academic interests. Our platform caters to those who seek companionship in their learning journeys, providing a supportive environment for users to connect, study together, and share knowledge.
 
 
 ## Getting started
