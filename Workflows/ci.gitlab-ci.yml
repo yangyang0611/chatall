@@ -1,0 +1,71 @@
+stages:
+  - unit-test
+  - build
+  - deploy
+
+variables:
+  DOCKER_REGISTRY: https://index.docker.io/v1/
+  DOCKER_REPOSITORY: alan0415/friendy-server
+  DOCKER_TAG: $CI_COMMIT_SHORT_SHA
+
+unit-test:
+  stage: unit-test
+  image: ubuntu:22.04
+  before_script:
+    - apt update
+    - apt install -y libmariadb3 libmariadb-dev python3-pip 
+    - pip3 install -r lab/lab2/friendy-server/requirements.txt
+    - export ENV=TEST
+  script:
+    - pytest --junitxml=report.xml
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
+
+
+build:
+  stage: build
+  image: 
+    name: gcr.io/kaniko-project/executor:v1.9.0-debug
+    entrypoint: [""]
+  before_script:
+    - mkdir -p /kaniko/.docker
+    - echo "{\"auths\":{\"$DOCKER_REGISTRY\":{\"username\":\"$DOCKER_USER\",\"password\":\"$DOCKER_PASSWORD\"}}}" > /kaniko/.docker/config.json
+  script:
+    - /kaniko/executor
+      --context "${CI_PROJECT_DIR}/lab/lab2/friendy-server"
+      --dockerfile "${CI_PROJECT_DIR}/lab/lab2/friendy-server/Dockerfile"
+      --destination $DOCKER_REPOSITORY:$DOCKER_TAG --no-push=false
+      #--destination "${CI_REGISTRY_IMAGE}/friendy-server:${CI_COMMIT_SHORT_SHA}"
+  needs:
+    - unit-test
+
+dev-deploy:
+  only:
+    - dev
+  stage: deploy
+  image:
+    name: kenshin17/argocd-cli:latest
+  script:
+    - git checkout ${CI_COMMIT_BRANCH}
+    - 'sed -i "s|image:.*|image: alan0415/friendy-server:$CI_COMMIT_SHORT_SHA|g" lab/lab2/manifests/friendy-server/overlay/dev/deployment-patch.yaml'
+    - git config user.email "gitlab-ci@example.com"
+    - git config user.name "gitlab-ci"
+    - git remote add gitlab https://ast9501:$GITLAB_ACCESS_TOKEN@gitlab.com/ast9501/2023-nycu-icsdt-g2.git
+    - git pull gitlab ${CI_COMMIT_BRANCH}
+    - git commit -am "Update image tag to $CI_COMMIT_SHORT_SHA for deploy stage"
+    #- git push https://oauth2:$CI_JOB_TOKEN@gitlab.com/ast9501/2023-nycu-icsdt-g2.git -o ci.skip
+    - git push gitlab ${CI_COMMIT_BRANCH} -o ci.skip
+  needs:
+    - build
+
+deploy:
+  only:
+    - main
+  stage: deploy
+  script:
+    - echo "Deploy"
+  when: manual
+  needs:
+    - build

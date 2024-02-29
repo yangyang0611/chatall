@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>shop</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/shop.css">
+
+
+    
+    <!-- Custom styles for this template -->
+    <!-- <link href="pricing.css" rel="stylesheet"> -->
+  </head>
+  <body>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+</svg>
+
+  <header>
+    <style>
+    .flex-nav {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    </style>
+    <nav class="navbar nav_bar" role="navigation">
+        <div class="container-fluid">
+            <form class="navbar-form navbar-left" role="search">
+                <a href="/welcome">
+                    <img src="static/images/logo/nav_logo.png" class="logo-small logo nav navbar-nav navbar-left" alt="nav_logo">
+                </a>
+            </form>
+
+            
+            <a href="/user_login">
+                <span class="navbar-text navbar-right navbar_text">
+                    <username></username>
+                </span>
+                <span class="navbar-form navbar-right navbar_user" role="search">
+                    <img src="static/images/logo/nav_user_icon.png" class="logo-small user" alt="nav_user_icon">
+                </span>
+            </a>
+        </div>
+    </nav>
+    <nav>
+        <ul class="flex-nav">
+            <li><a href="lobby">←返回大廳</a></li>
+            <li><a href="/shop#cloth">所有商品</a></li>
+            <li><a href="/shop#cloth">服飾/裝飾</a></li>
+            <li><a href="/shop#gift">道具</a></li>
+            <li><a href="/shop#point">點數/會員</a></li>
+            <li><a href="shopping_bag"><img src="static/images/shop/shopbag.png" class="logo-small logo nav navbar-nav navbar-left" alt="nav_logo"></a></li>
+        </ul>
+    </nav> 
+</header>
+
+<body>
+
+
+    <button class="js-back-to-top back-to-top" title="回到頭部">&#65085;</button>
+    <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+    
+    <script>
+    
+    $(function () {
+    var $win = $(window);
+    var $backToTop = $('.js-back-to-top');
+    // 當用戶滾動到離頂部100像素時，展示回到頂部按鈕
+    $win.scroll(function () {
+    if ($win.scrollTop() > 100) {
+    $backToTop.show();
+    } 
+    else {
+    $backToTop.hide();
+    }
+    });
+    // 當用戶點擊按鈕時，通過動畫效果返回頭部
+    $backToTop.click(function () {
+    $('html, body').animate({scrollTop: 0}, 200);
+    });
+    });
+</script>
+
+<a href="/shopping_bag"><button class="js-go-to-shopbag go-to-shopbag" title="前往購物車"><img src="static/images/shop/shopbag.png" style="width: 40px;height: 40px;"></button>
+    <script src="https://cdn.staticfile.org/jquery/2.2.4/jquery.min.js"></script>
+    
+    <script>
+    
+    $(function () {
+    var $win = $(window);
+    var $GoToShopbag = $('.js-go-to-shopbag');
+    // 當用戶滾動到離頂部100像素時，展示回到頂部按鈕
+    $win.scroll(function () {
+    if ($win.scrollTop() > 100) {
+    $GoToShopbag.show();
+    } 
+    else {
+    $GoToShopbag.hide();
+    }
+    });
+    });
+</script>
+
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+    <div class="row">
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-3">
+                <div class="product-head d-flex justify-content-between align-items-center"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/elf.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" name="cloth" id="cloth">小精靈套裝</a></h5><span class="product-price">
+                    1000點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head text-right"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/magician.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" >大法師套裝</a></h5><span class="product-price">1000點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head"><span class="badge badge-secondary">Out of Stock</span></div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/knight.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">鎧甲戰士套裝</a></h5><span class="product-price text-muted">1000點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#"><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-3">
+                <div class="product-head d-flex justify-content-between align-items-center"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/elephant.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">象鼻人套裝</a></h5><span class="product-price">
+                    1000點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-3">
+                <div class="product-head d-flex justify-content-between align-items-center"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/demon.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">惡魔套裝</a></h5><span class="product-price">
+                    1000點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head text-right"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/beauty.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" >農婦套裝</a></h5><span class="product-price">900點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head"><span class="badge badge-secondary">Out of Stock</span></div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/whitehair.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">白髮人套裝</a></h5><span class="product-price text-muted">900點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#"><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-3">
+                <div class="product-head d-flex justify-content-between align-items-center"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/beard.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" >鬍子叔叔套裝</a></h5><span class="product-price">
+                    900點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head text-right"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/black.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" >小黑人套裝</a></h5><span class="product-price">900點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head"><span class="badge badge-secondary">Out of Stock</span></div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/man.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">小帥哥套裝</a></h5><span class="product-price text-muted">900點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#"><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head text-right"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/rocket.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" name="gift" id="gift">打賞道具-火箭</a></h5><span class="product-price">200點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head text-right"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/ship.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">打賞道具-遊艇</a></h5><span class="product-price">150點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head text-right"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/flower.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">打賞道具-小花</a></h5><span class="product-price">50點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head text-right"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/love.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" >打賞道具-小心心</a></h5><span class="product-price">50點</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head"><span class="badge badge-secondary">Out of Stock</span></div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/money.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" name="point" id="point">點數500點</a></h5><span class="product-price text-muted">
+                        <del>NT$55</del>NT$50</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#"><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head"><span class="badge badge-secondary">Out of Stock</span></div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/chest.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#" name="point" id="point">點數2000點</a></h5><span class="product-price text-muted">
+                        <del>NT$220</del>NT$190</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#"><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-5">
+                <div class="product-head"><span class="badge badge-secondary">Out of Stock</span></div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/premium.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">高級會員</a></h5><span class="product-price text-muted">NT$250</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#"><i class="fa fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product-->
+        <div class="col-lg-4 col-sm-6 mb-30">
+            <div class="product-card mx-auto mb-3">
+                <div class="product-head d-flex justify-content-between align-items-center"><span class="badge badge-secondary">Out of Stock</span>
+                </div>
+                <a class="product-thumb" href="#"><img src="static/images/shop/blackgold.png" alt="Product Thumbnail"></a>
+                <div class="product-card-body"><a class="product-meta" href="#"> </a>
+                    <h5 class="product-title"><a href="#">黑金會員</a></h5><span class="product-price">
+                    NT$350</span>
+                </div>
+                <div class="product-buttons-wrap">
+                    <div class="product-buttons">
+                        <div class="product-button"><a href="#"  ><i class="fa fa-heart"></i></a></div>
+                        <div class="product-button"><a href="#" ><i class="fa fa-shopping-cart"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.10.0/feather.js"></script>
+</body>

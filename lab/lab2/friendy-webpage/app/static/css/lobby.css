@@ -1,0 +1,103 @@
+.container {
+	width: 800px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#avatar {
+    position: absolute;
+    left: 20%;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.object {
+	position: relative;
+	border: 1px solid black;
+	padding: 10px;
+	background-color: yellow;
+	cursor: pointer;
+}
+
+#object1 {
+	top: 300px;
+	left: 600px;
+}
+
+#object2 {
+	top: 200px;
+	left: 500px;
+}
+
+.object:hover::after {
+    content: attr(data-tooltip);
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, -5px);
+    white-space: nowrap;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+  
+.object:hover::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 5px);
+    border-style: solid;
+    border-color: transparent transparent rgba(0, 0, 0, 0.75) transparent;
+    border-width: 5px;
+  }
+
+  .object[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: red;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+nav ul li a {/*最上層選單樣式*/
+  display: block;
+  padding: 0 10px;
+  color: #eee;
+  font-size: 20px;
+  line-height: 30px;
+  text-decoration: none;
+  background-color: #000;
+  }
+  
+.receipt-content .invoice-wrapper .line-items .print a {
+  display: inline-block;
+  border: 1px solid #9CB5D6;
+  padding: 13px 13px;
+  border-radius: 5px;
+  color: #708DC0;
+  font-size: 13px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear; 
+}
+
+
+.receipt-content .invoice-wrapper .line-items .print {
+  margin-top: 50px;
+  text-align: center; 
+}

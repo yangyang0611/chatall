@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: friendy-service
+spec:
+  selector:
+    app: simple-api
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 8501
+    targetPort: 8501
+    nodePort: 30180

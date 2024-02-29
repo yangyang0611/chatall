@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chat Room</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/chatroom.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Chat Room</h1>
+    </div>
+    <div class="chat-container">
+      <div class="messages" id="message-container"></div>
+      <div class="message-input-container">
+        <input type="text" class="message-input" placeholder="Type your message here...">
+        <button type="submit" class="send-button">Send</button>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/chatroom.js') }}"></script>
+  <script src="https://cdn.socket.io/4.4.1/socket.io.min.js"></script>
+
+  <!-- <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-FsyTHlZw3J7kmh5CFdcVEE5L/6D/vxS5ZuV8rR2N5exdytzawKzD2Wbykt5tOJ6p" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-FsyTHlZw3J7kmh5CFdcVEE5L/6D/vxS5ZuV8rR2N5exdytzawKzD2Wbykt5tOJ6p" crossorigin="anonymous"></script> -->
+  <!-- <script src="js/chatroom.js"></script> -->
+  
+
+</body>
+</html>

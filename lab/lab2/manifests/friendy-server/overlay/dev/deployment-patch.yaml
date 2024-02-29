@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: friendy-server
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          image: alan0415/friendy-server:e8a7b92e
+          volumeMounts:
+            - name: config
+              mountPath: /src/internal/settings.py
+              subPath: settings.py
+      volumes:
+        - name: config
+          configMap:
+            name: friendy-dev-configmap
+            items:
+              - key: settings.py
+                path: settings.py

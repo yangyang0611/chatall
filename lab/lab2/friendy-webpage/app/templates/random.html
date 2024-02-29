@@ -1,0 +1,119 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>抽朋友</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="static/css/lobby.css">
+    <link rel="stylesheet" type="text/css" href="static/css/random.css">
+
+
+    
+    <!-- Custom styles for this template -->
+    <!-- <link href="pricing.css" rel="stylesheet"> -->
+  </head>
+<body>
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol id="check" viewBox="0 0 16 16">
+          <title>Check</title>
+          <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path>
+        </symbol>
+      </svg>
+      
+        <header>
+          <style>
+          .flex-nav {
+              display: flex;
+              justify-content: space-evenly;
+          }
+          </style>
+          <nav class="navbar nav_bar" role="navigation">
+              <div class="container-fluid">
+                  <form class="navbar-form navbar-left" role="search">
+                      <a href="/welcome">
+                          <img src="static/images/logo/nav_logo.png" class="logo-small logo nav navbar-nav navbar-left" alt="nav_logo">
+                      </a>
+                  </form>
+      
+                  
+                  <a href="/user_login">
+                      <span class="navbar-text navbar-right navbar_text">
+                          <username></username>
+                      </span>
+                      <span class="navbar-form navbar-right navbar_user" role="search">
+                          <img src="static/images/logo/nav_user_icon.png" class="logo-small user" alt="nav_user_icon">
+                      </span>
+                  </a>
+              </div>
+          </nav>
+          <nav>
+              <ul class="flex-nav">
+                <li><a href="lobby">←返回大廳</a></li>
+                <li><a href="profile">個人簡介</a></li>
+                <li><a href="/shop">商店</a></li>
+                <li><a href="/welcome">登出</a></li>
+              </ul>
+          </nav> 
+      </header>
+
+      <div id="cover" class="coverflow">
+        <a href='#'><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt=" "></a>
+        <a href='#'><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt=" "></a>
+        <a href='#'><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt=" "></a>
+        <a href='#'><img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt=" "></a>
+        <a href='#'><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt=" "></a>
+      </div>
+<div class="receipt-content">
+    <div class="container bootstrap snippets bootdey">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="invoice-wrapper">
+						<div class="print">
+							<a href="#">
+                                                        
+                                <button class="popuptest">抽朋友</button>
+	                            <div class="show"></div>
+                                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                <script>
+                                    // 抽签选项数组
+                                    var options = ['Dennis', 'Jonna', 'Eric','AUSTIN','Lina','Jim','Mandy','Amanda','Simon','小妤','彤彤','阿豪','祥祥','阿毛'];
+                            
+                                    // 抽签函数
+                                    function drawRandomOption() {
+                                        var rand = Math.floor(Math.random() * options.length);
+                                        return options[rand];
+                                    }
+                            
+                                    // 弹出确认对话框函数
+                                    function popup2() {
+                                        var confirmationMessage = '你抽到' + drawRandomOption() + '，要跟他當朋友嗎？';
+                                        if (confirm(confirmationMessage)) {
+                                            confirm('已送出交友邀請');
+                                        } else {
+                                            $('.show').empty();
+                                        }
+                                    }
+                            
+                                    // 监听按钮点击事件
+                                    $('.popuptest').click(popup2);
+                                </script>
+                            </a>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>         
+
+
+	
+
+</body></html>

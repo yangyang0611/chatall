@@ -1,0 +1,13 @@
+[Unit]
+Description=uWSGI instance to serve lab1 demo
+After=network.target
+
+[Service]
+User=demo
+Group=www-data
+Environment="PATH=/home/demo/env/lab1/bin"
+WorkingDirectory=/home/demo/2023-nycu-icsdt-g2/lab/lab1
+ExecStart=uwsgi --ini uwsgi.ini
+
+[Install]
+WantedBy=multi-user.target

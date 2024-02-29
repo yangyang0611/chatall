@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>car_num</title>
+
+    <!-- Bootstrap core CSS cdn 5.1.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- local style -->
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar nav_bar" role="navigation">
+            <div class="container-fluid">
+                <form class="navbar-form navbar-left" role="search">
+                    <a href="/welcome">
+                        <img src="static/images/logo/nav_logo.png" class="logo-small logo nav navbar-nav navbar-left" alt="nav_logo">
+                    </a>
+                </form>
+
+                
+                <a href="/user_login">
+                    <span class="navbar-text navbar-right navbar_text">
+                        <username></username>
+                    </span>
+                    <span class="navbar-form navbar-right navbar_user" role="search">
+                        <img src="static/images/logo/nav_user_icon.png" class="logo-small user" alt="nav_user_icon">
+                    </span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!--contain-->
+    <!--馬上進行預約-->
+    <div id="standard_box">
+        <form id="form">
+            <h3>時間預約</h3>
+            <div class="date_detail">
+                <date></date>
+                <username></username>
+            </div>
+
+            <div class="wrap">
+                <div class="search center">
+                    <a href="/time">
+                        <input name="time" class="input" type="text" value=""/>
+                    </a>
+                    
+                    <!-- <input name = "txt_select_time" class="search-bar" disabled="disabled" placeholder="請輸入預約時間">
+                    <a href="/time">
+                        <button name="goto_time" class="search-btn" type="button"><i class="fa fa-fw fa-search"></i></button>
+                    </a> -->
+                </div>
+            </div>
+
+            <a href="/welcome">
+                <input type="button" class="btn_close" value="x"/>                    
+            </a>
+
+            <div class="flex_parent">
+                <a href="/user_login">
+                    <input type="button" class="btn_small btn_white margin_right" value="上一步"/>
+                </a>
+                <a href="/select_carpark">
+                    <button name="select_time" type="button" class="btn_small btn_purple ">確認</button>            
+                </a>
+            </div>
+        </form>
+    </div>
+
+
+    <!--design-->
+    <div>
+        <img src="static/images/lineman/image1_circle.png" alt="img_circle1" class="pic_right">
+        <img src="static/images/lineman/image_lineman2.png" alt="img_lineman2" class="pic_bottom center">
+    </div>
+
+<!-- Bootstrap core JS cdn 5.1.3 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+crossorigin="anonymous"></script>
+<!-- jQuery cdn 3.6.0 -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.min.js"></script>
+<!-- local js -->
+<script src="static/js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>ChatCord App</title>
+  </head>
+  <body>
+    <div class="join-container">
+      <header class="join-header">
+        <h1><i class="fas fa-smile"></i> ChatCord</h1>
+      </header>
+      <main class="join-main">
+        <form id="join-form">
+          <div class="form-control">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter username..."
+              required
+            />
+          </div>
+          <div class="form-control">
+            <label for="room">Room</label>
+            <select name="room" id="room">
+              <option value="JavaScript">JavaScript</option>
+              <option value="Python">Python</option>
+              <option value="PHP">PHP</option>
+              <option value="C#">C#</option>
+              <option value="Ruby">Ruby</option>
+              <option value="Java">Java</option>
+              <option value="Custom">Custom</option>
+            </select>
+          </div>
+          <div class="form-control">
+            <label for="custom-room">Custom Room</label>
+            <input
+              type="text"
+              name="custom-room"
+              id="custom-room"
+              placeholder="Enter custom room name..."
+            />
+            <button type="button" id="add-room-btn">Add Room</button>
+          </div>
+          <button type="submit" class="btn">Join Chat</button>
+        </form>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js" integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4=" crossorigin="anonymous"></script>
+	<script>
+		const joinForm = document.getElementById('join-form');
+		joinForm.addEventListener('submit', (e) => {
+		  e.preventDefault();
+	  
+		  const usernameInput = document.getElementById('username');
+		  const username = usernameInput.value.trim();
+	  
+		  const roomSelect = document.getElementById('room');
+		  const roomValue = roomSelect.value;
+	  
+		  const customRoomInput = document.getElementById('custom-room');
+		  const customRoomValue = customRoomInput.value.trim();
+	  
+		  let queryString = `?username=${encodeURIComponent(username)}`;
+	  
+		  if (roomValue === 'Custom' && customRoomValue !== '') {
+			queryString += `&room=${encodeURIComponent(customRoomValue)}`;
+		  } else {
+			queryString += `&room=${encodeURIComponent(roomValue)}`;
+		  }
+	  
+		  window.location.href = `chat.html${queryString}`;
+		});
+	  
+		window.addEventListener('DOMContentLoaded', () => {
+		  const roomSelect = document.getElementById('room');
+		  const customRoomInput = document.getElementById('custom-room');
+      const addRoomBtn = document.getElementById('add-room-btn');
+      
+		  roomSelect.addEventListener('change', () => {
+			if (roomSelect.value === 'Custom') {
+			  customRoomInput.disabled = false;
+			} else {
+			  customRoomInput.disabled = true;
+			  customRoomInput.value = '';
+			}
+		  });
+      
+      addRoomBtn.addEventListener('click', function() {
+        const customRoomValue = customRoomInput.value.trim();
+
+					if (customRoomValue) {
+						// 创建新的选项
+						const newOption = document.createElement('option');
+						newOption.textContent = customRoomValue;
+						newOption.value = customRoomValue;
+
+						// 将新选项添加到下拉列表
+						roomSelect.appendChild(newOption);
+
+						// 清空输入框
+						customRoomInput.value = '';
+					}
+			});
+
+      roomSelect.selectedIndex = 0;
+		  customRoomInput.disabled = true;
+		});
+	  </script>
+	  
+  </body>
+</html>

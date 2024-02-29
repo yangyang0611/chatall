@@ -1,0 +1,12 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: simple-api-service
+spec:
+  selector:
+    app: simple-api
+  type: NodePort
+  ports:
+  - protocol: TCP
+    port: 8501
+    targetPort: 8501
